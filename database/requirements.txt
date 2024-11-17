@@ -1,0 +1,5 @@
+firebase-admin
+geopy
+openpyxl
+pandas
+python-dotenv
