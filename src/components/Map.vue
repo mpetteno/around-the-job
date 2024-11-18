@@ -1,35 +1,64 @@
 <template>
   <div id="map"></div>
-  <ul>
-    <li v-for="company in companies" v-if="companies">
-      {{ company.company_name }}
-    </li>
-  </ul>
 </template>
 
 <script setup>
-  import { onMounted } from "vue";
+  import { onMounted, watch } from "vue";
   import "leaflet/dist/leaflet.css";
+  import '@fortawesome/fontawesome-free/css/all.min.css';
   import L from "leaflet";
-  import { collection } from "firebase/firestore";
-  import { useFirestore, useCollection } from "vuefire";
+  import { companies } from "@/store.js";
 
+  // Parameters
+  const props = {
+    mapUrl: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+    mapCenter: [0, 0],
+    mapInitialZoom: 2,
+    mapMaxZoom: 19,
+    attribution: ""
+  }
+
+  // Setup map
   let map;
-  const db = useFirestore();
-  const companies = useCollection(collection(db, 'companies'))
-
   onMounted(() => {
-    map = L.map("map").setView([51.505, -0.09], 13);
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      maxZoom: 19,
-      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    map = L.map("map").setView(props.mapCenter, props.mapInitialZoom);
+    L.tileLayer(props.mapUrl, {
+      maxZoom: props.mapMaxZoom,
+      attribution: props.attribution
     }).addTo(map);
   });
+
+  // Setup markers
+  const favouriteIcon = L.divIcon({
+    html: '<i class="fa-solid fa-heart"></i>',
+    className: 'favourite-icon',
+  });
+  let markers = [];
+  const updateMarkers = () => {
+    // Remove all existing markers
+    markers.forEach((marker) => map.removeLayer(marker));
+    markers = [];
+    // Add filtered companies as markers
+    companies.value.forEach((company) => {
+      const markerOptions = company.favourite ? {icon: favouriteIcon} : {};
+      const marker = L.marker([company.latitude, company.longitude], markerOptions)
+        .addTo(map)
+        .bindPopup(`<b>${company.company_name}</b>`);
+      markers.push(marker);
+    });
+  }
+  watch(companies, () => { updateMarkers(); });
 </script>
 
 <style>
   #map {
     width: 100%;
     height: 100vh;
+    overflow: hidden;
+  }
+
+  .favourite-icon {
+    color: indianred;
+    font-size: 32px;
   }
 </style>

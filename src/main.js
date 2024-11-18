@@ -4,10 +4,9 @@ import { getFirebase } from './firebase'
 import { createApp } from 'vue'
 import App from './App.vue'
 
-const { firebaseConfig } = getFirebase();
 const app = createApp(App)
   .use(VueFire, {
-    firebaseApp: firebaseConfig
+    firebaseApp: getFirebase()
   })
 
 app.mount('#app');
