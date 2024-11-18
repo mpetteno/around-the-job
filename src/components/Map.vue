@@ -5,7 +5,6 @@
 <script setup>
   import { onMounted, watch } from "vue";
   import "leaflet/dist/leaflet.css";
-  import '@fortawesome/fontawesome-free/css/all.min.css';
   import L from "leaflet";
   import { companies } from '@/store.js'
 
@@ -29,9 +28,13 @@
   });
 
   // Setup markers
+  const defaultIcon = L.divIcon({
+    html: '<i class="fa-solid fa-location-dot"></i>',
+    className: 'default-marker-icon',
+  });
   const favouriteIcon = L.divIcon({
     html: '<i class="fa-solid fa-heart"></i>',
-    className: 'favourite-icon',
+    className: 'favourite-marker-icon',
   });
   let markers = [];
   const updateMarkers = () => {
@@ -40,7 +43,7 @@
     markers = [];
     // Add filtered companies as markers
     companies.value.forEach((company) => {
-      const markerOptions = company.favourite ? {icon: favouriteIcon} : {};
+      const markerOptions = company.favourite ? {icon: favouriteIcon} : {icon: defaultIcon};
       const marker = L.marker([company.latitude, company.longitude], markerOptions)
         .addTo(map)
         .bindPopup(`<b>${company.company_name}</b>`);
@@ -57,7 +60,12 @@
     overflow: hidden;
   }
 
-  .favourite-icon {
+  .default-marker-icon {
+    color: #3899a2;
+    font-size: 32px;
+  }
+
+  .favourite-marker-icon {
     color: indianred;
     font-size: 32px;
   }

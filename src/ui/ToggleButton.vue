@@ -1,20 +1,20 @@
 <template>
-  <button class="toggle-button" @click="$emit('toggle-event')">
+  <button class="toggle-button" :class="{active: isActive}" @click="$emit('toggle-event')">
     <template v-if="direction === 'left'">
-      <span v-if="isActive">←</span>
-      <span v-else>→</span>
+      <span v-if="isActive"><i class="fa-solid fa-chevron-left"></i></span>
+      <span v-else><i class="fa-solid fa-chevron-right"></i></span>
     </template>
     <template v-else-if="direction === 'right'">
-      <span v-if="isActive">→</span>
-      <span v-else>←</span>
+      <span v-if="isActive"><i class="fa-solid fa-chevron-right"></i></span>
+      <span v-else><i class="fa-solid fa-chevron-left"></i></span>
     </template>
     <template v-else-if="direction === 'top'">
-      <span v-if="isActive">↑</span>
-      <span v-else>↓</span>
+      <span v-if="isActive"><i class="fa-solid fa-chevron-up"></i></span>
+      <span v-else><i class="fa-solid fa-chevron-down"></i></span>
     </template>
     <template v-else>
-      <span v-if="isActive">↓</span>
-      <span v-else>↑</span>
+      <span v-if="isActive"><i class="fa-solid fa-chevron-down"></i></span>
+      <span v-else><i class="fa-solid fa-chevron-up"></i></span>
     </template>
   </button>
 </template>
@@ -26,12 +26,15 @@
 
 <style scoped>
   .toggle-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px;
+    background-color: #dddddd;
+    color: #363536;
     cursor: pointer;
     font-size: 1.2rem;
-    height: 48px;
+    border-style: solid;
+    border-color: #f78e09;
+  }
+
+  .toggle-button.active {
+    background-color: #f78e09;
   }
 </style>

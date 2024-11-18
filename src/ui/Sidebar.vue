@@ -3,7 +3,7 @@
     <div class="sidebar" v-show="isSidebarOpen">
       <slot></slot>
     </div>
-    <ToggleButton :is-active="isSidebarOpen" :direction="position" @toggle-event="toggleSidebar"/>
+    <ToggleButton :is-active="isSidebarOpen" :direction="position" @toggle-event="isSidebarOpen = !isSidebarOpen"/>
   </div>
 </template>
 
@@ -12,9 +12,6 @@
   import ToggleButton from "@/ui/ToggleButton.vue";
   import { ref } from "vue";
   const isSidebarOpen = ref(false);
-  const toggleSidebar = () => {
-    isSidebarOpen.value = !isSidebarOpen.value;
-  };
 </script>
 
 <style scoped>
@@ -28,10 +25,10 @@
   }
 
   .sidebar {
-    width: 250px;
     background-color: #f4f4f4;
     padding: 20px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     transition: left 0.3s ease;
+    flex-shrink: 1000;
   }
 </style>
