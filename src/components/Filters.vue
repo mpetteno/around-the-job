@@ -16,10 +16,19 @@
 </template>
 
 <script setup>
-  import { computed, ref, watch } from "vue";
-  import { companiesFilters, companiesTags } from "@/store.js";
-  import { where } from "firebase/firestore";
   import Sidebar from "@/ui/Sidebar.vue";
+  import { computed, ref, watch } from "vue";
+  import { collection, query, where } from "firebase/firestore";
+  import { useCollection, useFirestore } from "vuefire";
+  import { companies } from '@/store.js'
+
+  // Get collections
+  const db = useFirestore();
+  const companiesTags = useCollection(collection(db, "tags"))
+  const companiesCol = collection(db, "companies");
+  const companiesFilters = ref([null]);
+  const companiesQuery = computed(() => query(companiesCol, ...companiesFilters.value));
+  useCollection(companiesQuery, { target: companies })
 
   // Favourite handler
   const favouriteChecked = ref(true);

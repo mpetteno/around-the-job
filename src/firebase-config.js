@@ -1,4 +1,4 @@
-export default {
+export const firebaseConfig = {
   apiKey: "AIzaSyAeFMoXSElcKsCjHelN2kgOSY-rVnnpSR8",
   authDomain: "around-the-job.firebaseapp.com",
   projectId: "around-the-job",

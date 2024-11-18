@@ -7,7 +7,7 @@
   import "leaflet/dist/leaflet.css";
   import '@fortawesome/fontawesome-free/css/all.min.css';
   import L from "leaflet";
-  import { companies } from "@/store.js";
+  import { companies } from '@/store.js'
 
   // Parameters
   const props = {
@@ -40,7 +40,7 @@
     markers = [];
     // Add filtered companies as markers
     companies.value.forEach((company) => {
-      const markerOptions = company.favourite ? {icon: favouriteIcon} : {};
+      const markerOptions = company.favourite ? {icon: favouriteIcon} : {icon: icon};
       const marker = L.marker([company.latitude, company.longitude], markerOptions)
         .addTo(map)
         .bindPopup(`<b>${company.company_name}</b>`);
