@@ -1,6 +1,26 @@
 <template>
   <Sidebar position="top">
-    <h1>Menu</h1>
+    <nav>
+      <div class="section">
+        <div class="section-title">Boards</div>
+        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i>LinkedIn</a>
+        <a href="https://www.indeed.com/worldwide" target="_blank"><i class="fas fa-globe"></i>Indeed</a>
+        <a href="https://glassdoor.com" target="_blank"><i class="fas fa-door-open"></i>Glassdoor</a>
+        <a href="https://ziprecruiter.com" target="_blank"><i class="fas fa-map-pin"></i>ZipRecruiter</a>
+        <a href="https://careerbuilder.com" target="_blank"><i class="fas fa-briefcase"></i>CareerBuilder</a>
+        <a href="https://monster.com" target="_blank"><i class="fas fa-paw"></i>Monster</a>
+        <a href="https://jobs.workable.com/" target="_blank"><i class="fas fa-clipboard-list"></i>Workable Jobs</a>
+        <a href="https://soundlister.com" target="_blank"><i class="fas fa-music"></i>Soundlister</a>
+        <a href="https://soundbetter.com" target="_blank"><i class="fas fa-guitar"></i>SoundBetter</a>
+      </div>
+      <div class="divider"></div>
+      <div class="section">
+        <div class="section-title">Tools</div>
+        <a href="https://interviewprep.org/" target="_blank"><i class="fas fa-brain"></i>InterviewPrep</a>
+        <a href="https://neetcode.io" target="_blank"><i class="fas fa-code"></i>NeetCode</a>
+        <a href="https://hackerrank.com" target="_blank"><i class="fas fa-terminal"></i>HackerRank</a>
+      </div>
+    </nav>
   </Sidebar>
 </template>
 
@@ -23,5 +43,42 @@
     height: 24px;
     border-radius: 0 0 12px 12px;
     border-width: 0 1px 1px 1px;
+  }
+
+  nav {
+    color: #363536;
+    padding: 1em;
+    width: 200px;
+    font-size: 20px;
+  }
+
+  nav .section {
+    margin-bottom: 1em;
+  }
+
+  nav .divider {
+    border-top: 1px solid black;
+    margin: 1em 0;
+  }
+
+  nav a {
+    display: block;
+    text-decoration: none;
+    color: #363536;
+    padding: 0.5em 0;
+  }
+
+  nav a:hover {
+    color: #3899a2;
+  }
+
+  nav i {
+    margin-right: 0.5em;
+  }
+
+  .section-title {
+    color: #358692;
+    font-weight: bold;
+    margin-bottom: 0.5em;
   }
 </style>
