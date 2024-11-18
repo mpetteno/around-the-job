@@ -40,7 +40,7 @@
     markers = [];
     // Add filtered companies as markers
     companies.value.forEach((company) => {
-      const markerOptions = company.favourite ? {icon: favouriteIcon} : {icon: icon};
+      const markerOptions = company.favourite ? {icon: favouriteIcon} : {};
       const marker = L.marker([company.latitude, company.longitude], markerOptions)
         .addTo(map)
         .bindPopup(`<b>${company.company_name}</b>`);
