@@ -9,18 +9,17 @@
         <a href="https://ziprecruiter.com" target="_blank"><i class="fas fa-map-pin"></i>ZipRecruiter</a>
         <a href="https://careerbuilder.com" target="_blank"><i class="fas fa-briefcase"></i>CareerBuilder</a>
         <a href="https://monster.com" target="_blank"><i class="fas fa-paw"></i>Monster</a>
-        <a href="https://www.workatastartup.com/" target="_blank"><i class="fab fa-play"></i>Y Combinator</a>
+        <a href="https://www.workatastartup.com/" target="_blank"><i class="fa-solid fa-play"></i>Y Combinator</a>
         <a href="https://jobs.workable.com/" target="_blank"><i class="fas fa-clipboard-list"></i>Workable Jobs</a>
         <a href="https://soundlister.com" target="_blank"><i class="fas fa-music"></i>Soundlister</a>
         <a href="https://soundbetter.com" target="_blank"><i class="fas fa-guitar"></i>SoundBetter</a>
       </div>
-      <div class="divider"></div>
       <div class="section">
         <div class="section-title">Tools</div>
         <a href="https://interviewprep.org/" target="_blank"><i class="fas fa-brain"></i>InterviewPrep</a>
         <a href="https://neetcode.io" target="_blank"><i class="fas fa-code"></i>NeetCode</a>
         <a href="https://leetcode.com/" target="_blank"><i class="fas fa-terminal"></i>LeetCode</a>
-        <a href="https://hackerrank.com" target="_blank"><i class="fas fa-hackerrank"></i>HackerRank</a>
+        <a href="https://hackerrank.com" target="_blank"><i class="fa-brands fa-hackerrank"></i>HackerRank</a>
       </div>
     </nav>
   </Sidebar>
@@ -50,17 +49,10 @@
   nav {
     color: #363536;
     padding: 1em;
-    width: 200px;
     font-size: 20px;
-  }
-
-  nav .section {
-    margin-bottom: 1em;
-  }
-
-  nav .divider {
-    border-top: 1px solid black;
-    margin: 1em 0;
+    display: flex;
+    flex-direction: row;
+    column-gap: 50px;
   }
 
   nav a {

@@ -49,7 +49,7 @@
 <style scoped>
   .sidebar-container {
     height: 100%;
-    max-width: 40%;
+    max-width: 60%;
   }
 
   .sidebar-container >>> .sidebar {
