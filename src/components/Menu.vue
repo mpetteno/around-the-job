@@ -6,6 +6,7 @@
         <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i>LinkedIn</a>
         <a href="https://www.indeed.com/worldwide" target="_blank"><i class="fas fa-globe"></i>Indeed</a>
         <a href="https://glassdoor.com" target="_blank"><i class="fas fa-door-open"></i>Glassdoor</a>
+        <a href="https://talent.micro1.ai/profile" target="_blank"><i class="fa-solid fa-microchip"></i>micro1</a>
         <a href="https://ziprecruiter.com" target="_blank"><i class="fas fa-map-pin"></i>ZipRecruiter</a>
         <a href="https://careerbuilder.com" target="_blank"><i class="fas fa-briefcase"></i>CareerBuilder</a>
         <a href="https://monster.com" target="_blank"><i class="fas fa-paw"></i>Monster</a>
@@ -30,6 +31,11 @@
         <a href="https://neetcode.io" target="_blank"><i class="fas fa-code"></i>NeetCode</a>
         <a href="https://leetcode.com/" target="_blank"><i class="fas fa-terminal"></i>LeetCode</a>
         <a href="https://hackerrank.com" target="_blank"><i class="fa-brands fa-hackerrank"></i>HackerRank</a>
+        <a href="https://www.metacareers.com/profile/coding_puzzles" target="_blank">
+          <i class="fa-brands fa-meta"></i>Meta Puzzles</a>
+        <a href="https://www.codewars.com/" target="_blank"><i class="fas fa-code-branch"></i>CodeWars</a>
+        <a href="https://www.codechef.com/" target="_blank"><i class="fa-solid fa-pizza-slice"></i>CodeChef</a>
+        <a href="https://www.hackerearth.com/" target="_blank"><i class="fa-solid fa-flag-checkered"></i>HackerEarth</a>
       </div>
     </nav>
   </Sidebar>
