@@ -15,6 +15,16 @@
         <a href="https://soundbetter.com" target="_blank"><i class="fas fa-guitar"></i>SoundBetter</a>
       </div>
       <div class="section">
+        <div class="section-title"><i class="fa-solid fa-laptop-file"></i>Remote Jobs</div>
+        <a href="https://remoteok.com/" target="_blank">RemoteOK</a>
+        <a href="https://empllo.com/" target="_blank">Empollo</a>
+        <a href="https://wellfound.com/" target="_blank">Wellfound</a>
+        <a href="https://www.toptal.com/" target="_blank">Toptal</a>
+        <a href="https://nodesk.co/" target="_blank">NoDesk</a>
+        <a href="https://javascript.jobs/remote" target="_blank">JSRemotely</a>
+        <a href="https://www.flexjobs.com/" target="_blank">FlexJobs</a>
+      </div>
+      <div class="section">
         <div class="section-title">Tools</div>
         <a href="https://interviewprep.org/" target="_blank"><i class="fas fa-brain"></i>InterviewPrep</a>
         <a href="https://neetcode.io" target="_blank"><i class="fas fa-code"></i>NeetCode</a>
