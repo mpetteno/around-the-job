@@ -1,5 +1,8 @@
 <template>
-  <div id="map"></div>
+  <div id="map">
+    <Filters />
+    <Menu />
+  </div>
 </template>
 
 <script setup>
@@ -7,6 +10,8 @@
   import "leaflet/dist/leaflet.css";
   import L from "leaflet";
   import { companies } from '@/store.js'
+  import Menu from "@/components/Menu.vue";
+  import Filters from "@/components/Filters.vue";
 
   // Parameters
   const props = {
