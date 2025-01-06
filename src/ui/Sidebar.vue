@@ -31,4 +31,24 @@
     transition: left 0.3s ease;
     flex-shrink: 1000;
   }
+
+  @media (max-width: 768px) {
+    .sidebar {
+      height: 100vh;
+      overflow-y: auto;
+    }
+
+    .favourite-checkbox {
+      margin: 10px;
+    }
+
+    #tags {
+      flex-direction: column;
+    }
+
+    .reset-btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
 </style>

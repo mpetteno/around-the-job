@@ -97,16 +97,50 @@
     color: #363536;
   }
 
-  .btn:hover {
-    border-color: #f78e09;
+  @media (min-width: 1025px) {
+    .btn:hover {
+      border-color: #f78e09;
+    }
+    .tag:hover {
+      background-color: #e08c8f;
+    }
+  }
+
+  @media (max-width: 411px) {
+    .btn {
+      padding: 2px 4px;
+      font-size: 6px;
+    }
+  }
+
+  @media (min-width: 412px) and (max-width: 769px) {
+    .btn {
+      padding: 3px 6px;
+      font-size: 8px;
+    }
+  }
+
+  @media (min-width: 770px) and (max-width: 1024px) {
+    .btn {
+      padding: 4px 8px;
+      font-size: 12px;
+    }
+    .btn:hover {
+      border-color: unset;
+    }
   }
 
   .tag {
     display: inline-block;
   }
 
-  .tag:hover {
-    background-color: #e08c8f;
+  @media (max-width: 1024px) {
+    .tag:hover {
+      background-color: unset;
+    }
+    .tag:active {
+      background-color: #e08c8f;
+    }
   }
 
   .tag.checked {

@@ -1,12 +1,12 @@
 <template>
   <div id="map">
     <Filters />
-    <Menu />
+    <Menu v-if="isDesktop"/>
   </div>
 </template>
 
 <script setup>
-  import { onMounted, watch } from "vue";
+  import { onMounted, ref, watch } from "vue";
   import "leaflet/dist/leaflet.css";
   import L from "leaflet";
   import { companies } from '@/store.js'
@@ -24,7 +24,12 @@
 
   // Setup map
   let map;
+  const isDesktop = ref(false);
   onMounted(() => {
+    isDesktop.value = window.innerWidth > 1024;
+    window.addEventListener('resize', () => {
+      isDesktop.value = window.innerWidth > 1024;
+    });
     map = L.map("map").setView(props.mapCenter, props.mapInitialZoom);
     L.tileLayer(props.mapUrl, {
       maxZoom: props.mapMaxZoom,
