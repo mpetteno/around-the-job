@@ -195,6 +195,7 @@ coverage
 /local/
 
 # Projects
+/database/bivouacs_db.csv
 /database/companies_db.csv
 /database/companies_db.xlsx
 /database/companies_db_modified.xlsx

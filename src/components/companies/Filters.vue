@@ -23,7 +23,7 @@
 
   // Get collections
   const db = useFirestore();
-  const companiesTags = useCollection(collection(db, "tags"))
+  const companiesTags = useCollection(collection(db, "companies_tags"))
   const companiesCol = collection(db, "companies");
   const companiesFilters = ref([null]);
   const companiesQuery = computed(() => query(companiesCol, ...companiesFilters.value));
@@ -71,6 +71,7 @@
   .favourite-checkbox > i {
     color: #dddddd;
     font-size: 32px;
+    margin-bottom: 20px;
   }
 
   .favourite-checkbox.checked > i {

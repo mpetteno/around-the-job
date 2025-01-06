@@ -10,8 +10,8 @@
   import "leaflet/dist/leaflet.css";
   import L from "leaflet";
   import { companies } from '@/store.js'
-  import Menu from "@/components/Menu.vue";
-  import Filters from "@/components/Filters.vue";
+  import Menu from "@/components/companies/Menu.vue";
+  import Filters from "@/components/companies/Filters.vue";
 
   // Parameters
   const props = {
@@ -83,49 +83,3 @@
   }
   watch(companies, () => { updateMarkers(); });
 </script>
-
-<style>
-  #map {
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-  }
-
-  .default-marker-icon {
-    color: #3899a2;
-    font-size: 32px;
-  }
-
-  .favourite-marker-icon {
-    color: indianred;
-    font-size: 32px;
-  }
-
-  .popup-container {
-    font-size: 14px;
-    line-height: 1.5;
-  }
-
-  .popup-container h4 {
-    margin: 0 0 0.5em 0;
-    font-size: 16px;
-  }
-
-  .popup-container a {
-    color: #007BFF;
-    text-decoration: none;
-  }
-
-  .popup-container a:hover {
-    text-decoration: underline;
-  }
-
-  .popup-container .label {
-    font-weight: bold;
-  }
-
-  .popup-container .rating {
-    display: inline-block;
-    color: #FFD700; /* Gold color for stars */
-  }
-</style>

@@ -1,30 +1,11 @@
 import argparse
 import logging
 
-import firebase_admin
 import numpy as np
 import pandas as pd
 from dotenv import load_dotenv
-from firebase_admin import firestore
 
-
-def get_firebase_client():
-    cred = firebase_admin.credentials.Certificate("./firebase_admin_sdk.json")
-    firebase_admin.initialize_app(cred)
-    db = firestore.client()
-    return db
-
-def write_document(db, data, collection_name, document_id, overwrite=False):
-    doc_ref = db.collection(collection_name).document(document_id)
-    doc = doc_ref.get()
-    if doc.exists and not overwrite:
-        logging.info(f"Document {document_id} already exists. Skipping.")
-    else:
-        db.collection(collection_name).document(document_id).set(data)
-        if overwrite:
-            logging.info(f"Overwritten document {document_id}.")
-        else:
-            logging.info(f"Uploaded document {document_id}.")
+from database.firebase_utils import write_document, get_firebase_client
 
 
 def upload_companies(db, dataframe, collection_name, overwrite=False):
@@ -57,7 +38,7 @@ if __name__ == "__main__":
     def split_string(s):
         return [x.strip() for x in s.split(',')]
     df = pd.read_csv("./companies_db.csv", converters={'tags': split_string})
-    collection_id = "tags"
+    collection_id = "companies_tags"
     upload_tags(fb_client, df, collection_id, args.overwrite)
     logging.info("Process completed successfully.")
     # Upload companies
