@@ -152,11 +152,30 @@ watch([favouriteChecked, waterFilter, woodFilter, kitchenFilter, fireplaceFilter
   color: #444;
 }
 
-#filters label:hover {
-  background-color: #e08c8f;
-}
 
 #filters label input:checked + i {
   color: #36d183;
 }
+
+@media (max-width: 768px) {
+  .sidebar-container >>> .sidebar {
+    height: auto !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  #filters label:hover {
+    background-color: #e08c8f;
+  }
+}
+
+@media (max-width: 1024px) {
+  #filters label:hover {
+    background-color: unset;
+  }
+  #filters label:active {
+    background-color: #e08c8f;
+  }
+}
+
 </style>
