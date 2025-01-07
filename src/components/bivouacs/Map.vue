@@ -36,7 +36,7 @@
     if (bivouac.name) popupHtml += `<h4>${bivouac.name}</h4>`;
     // Preview Image
     if (bivouac.preview_image_link) {
-      popupHtml += `<div class="image-container"><img src=https://i.imgur.com/Cxc8k4J.jpg" alt="Preview Image" class="popup-image" /></div>`;
+      popupHtml += `<div class="image-container"><img src="${bivouac.preview_image_link}" alt="Preview Image" class="popup-image" /></div>`;
     }
     // Altitude
     if (bivouac.altitude) popupHtml += `<p><span class="label">Altitude:</span> ${bivouac.altitude} meters</p>`;
