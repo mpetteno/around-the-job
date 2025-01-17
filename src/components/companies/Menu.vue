@@ -10,6 +10,7 @@
         <a href="https://ziprecruiter.com" target="_blank"><i class="fas fa-map-pin"></i>ZipRecruiter</a>
         <a href="https://careerbuilder.com" target="_blank"><i class="fas fa-briefcase"></i>CareerBuilder</a>
         <a href="https://monster.com" target="_blank"><i class="fas fa-paw"></i>Monster</a>
+        <a href="https://www.workwise.io/en" target="_blank"><i class="fa-solid fa-person-digging"></i>Workwise</a>
         <a href="https://www.workatastartup.com/" target="_blank"><i class="fa-solid fa-play"></i>Y Combinator</a>
         <a href="https://jobs.workable.com/" target="_blank"><i class="fas fa-clipboard-list"></i>Workable Jobs</a>
         <a href="https://soundlister.com" target="_blank"><i class="fas fa-music"></i>Soundlister</a>

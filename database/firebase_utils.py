@@ -17,7 +17,7 @@ def write_document(db, data, collection_name, document_id, overwrite=False):
         logging.info(f"Document {document_id} already exists. Skipping.")
     else:
         db.collection(collection_name).document(document_id).set(data)
-        if overwrite:
+        if doc.exists and overwrite:
             logging.info(f"Overwritten document {document_id}.")
         else:
             logging.info(f"Uploaded document {document_id}.")
