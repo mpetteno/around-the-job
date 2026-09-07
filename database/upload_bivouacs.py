@@ -22,9 +22,12 @@ if __name__ == "__main__":
     # Setup
     load_dotenv()
     logging.basicConfig(level=logging.INFO)
+    file_id = "1lIhOLFvTszi31XzHzYVvcOYtvAVfAagmAZH-FkRXZh8"
+    file_url = f"https://docs.google.com/spreadsheets/d/{file_id}/export?format=csv"
+    logging.info(f"File URL: {file_url}")
     # Get firebase client
     fb_client = get_firebase_client()
     # Upload companies
-    df = pd.read_csv("./bivouacs_db.csv")
+    df = pd.read_csv(file_url)
     collection_id = "bivouacs"
     upload_bivouacs(fb_client, df, collection_id, args.overwrite)

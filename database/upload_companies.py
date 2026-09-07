@@ -32,18 +32,21 @@ if __name__ == "__main__":
     # Setup
     load_dotenv()
     logging.basicConfig(level=logging.INFO)
+    file_id = "1eLd29yh5NUb7R3_4S_UUC7T9rS8D-ItcK-09ROjl6bw"
+    file_url = f"https://docs.google.com/spreadsheets/d/{file_id}/export?format=csv"
+    logging.info(f"File URL: {file_url}")
     # Get firebase client
     fb_client = get_firebase_client()
     # Upload tags
     def split_string(s):
         return [x.strip() for x in s.split(',')]
-    df = pd.read_csv("./companies_db.csv", converters={'tags': split_string})
+    df = pd.read_csv(file_url, converters={'tags': split_string})
     collection_id = "companies_tags"
     upload_tags(fb_client, df, collection_id, args.overwrite)
     logging.info("Process completed successfully.")
     # Upload companies
     def tags_to_map(s):
         return {x.strip(): True for x in s.split(',')}
-    df = pd.read_csv("./companies_db.csv", converters={'tags': tags_to_map})
+    df = pd.read_csv(file_url, converters={'tags': tags_to_map})
     collection_id = "companies"
     upload_companies(fb_client, df, collection_id, args.overwrite)

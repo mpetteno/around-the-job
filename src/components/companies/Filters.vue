@@ -30,7 +30,7 @@
   useCollection(companiesQuery, { target: companies })
 
   // Favourite handler
-  const favouriteChecked = ref(true);
+  const favouriteChecked = ref(false);
   const favouriteFilter = computed(() => {
     return favouriteChecked.value ? [where("favourite", "==", favouriteChecked)] : []
   });

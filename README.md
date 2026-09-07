@@ -37,11 +37,10 @@ npm run lint
 1) Create Firebase project
 2) Create Firebase app
 3) Save config to json
-4) ~~Check and ensure free tier limit on GCC~~ (firebase does not require a billing account)
-5) Enable Google Maps Geocoding API for the project
-6) Create API credentials
-7) Create .env file with GOOGLE_API_KEY=
-8) Download excel file without coordinates 
-9) Run geocoding.py
-10) Upload modified excel file to Drive and export CSV
-11) Run upload_to_firebase.py
+4) Enable Google Maps Geocoding API for the project
+5) Create API credentials
+6) Create .env file with GOOGLE_API_KEY=
+7) Download excel file without coordinates 
+8) Run geocoding.py
+9) Upload modified excel file to Drive and export CSV
+10) Run upload_to_firebase.py
